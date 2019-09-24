@@ -9,8 +9,11 @@ commander
 
    commander.parse(process.argv);
     if (commander.initialize){
-        confirm()
-        initialize();
+        confirm = () => {
+
+        
+        initialize()
+    }
     }
 
 

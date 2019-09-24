@@ -1,6 +1,7 @@
 const readline = require('readline');
 
-const confirm = () => {
+const confirm = (callback) => {
+    
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
