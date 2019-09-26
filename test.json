@@ -1,0 +1,11 @@
+{
+    "accounts": [
+        {
+        "Usermane": "admin",
+        "Password": "password",
+        "Balance": 2000
+        }
+    ]
+
+    
+}

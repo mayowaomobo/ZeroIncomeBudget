@@ -1,0 +1,27 @@
+{
+  "name": "ZeroIncomeBudget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "dependencies": {
+    "commander": "^3.0.1",
+    "chalk": "^2.4.2",
+    "log4js": "^5.1.0",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayowaomobo/ZeroIncomeBudget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayowaomobo/ZeroIncomeBudget/issues"
+  },
+  "homepage": "https://github.com/mayowaomobo/ZeroIncomeBudget#readme"
+}
