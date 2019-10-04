@@ -3,17 +3,18 @@
   "info": [
     {
       "login": {
-        "username": "r",
-        "passcode": 114
+        "username": "m",
+        "passcode": 109
       }
     },
     {
-      "initial": "4",
+      "initial": "7",
       "testy": 3,
       "factors": [
-        "rt",
-        "rrr"
-      ]
+        "i",
+        "u"
+      ],
+      "percentages": []
     }
   ]
 }

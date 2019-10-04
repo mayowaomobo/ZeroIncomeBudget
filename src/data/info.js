@@ -26,7 +26,8 @@ const info = () => {
     parsedInfo.info.push({
         initial: initial,
         testy: y,
-        factors: factors
+        factors: factors,
+        percentages: []
     })
     saveData(parsedInfo)
 // console.log(factors)
