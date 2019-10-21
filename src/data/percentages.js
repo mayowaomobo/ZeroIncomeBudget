@@ -20,6 +20,7 @@ MAX = 100, MIN = 0, value = (MAX/2), key = "", test = 100;
         console.log("More than 100% allocated")
         return
       }
+      console.log("account created")
       }
     // }while(input < test)
   

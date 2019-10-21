@@ -3,16 +3,15 @@
   "info": [
     {
       "login": {
-        "username": "w",
-        "passcode": 101
+        "username": "m",
+        "passcode": 109
       }
     },
     {
       "initial": "4",
-      "testy": 3,
+      "testy": 2,
       "factors": [
-        "e",
-        "t"
+        "r"
       ],
       "percentages": []
     }
