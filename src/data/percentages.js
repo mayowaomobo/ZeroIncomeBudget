@@ -2,26 +2,26 @@ const fs = require('fs')
 const readlineSync = require('readline-sync')
 
 const percentages = (info) => { 
-MAX = 100, MIN = 0, value = (MAX/2), key = "", test = 100;
 
 
+console.log("this is percentages")
   
     // do{
-      for (var goals of info.info[1].factors){
-      console.log(test)
-      console.log(goals)
-      input = readlineSync.question("Percentage allocated to " + goals)
+      // for (var goals of info.info[1].factors){
+      // console.log(test)
+      // console.log(goals)
+      // input = readlineSync.question("Percentage allocated to " + goals)
       
-      if (input < test){
-        test -= input;
+      // if (input < test){
+      //   test -= input;
         
-      }
-      else {
-        console.log("More than 100% allocated")
-        return
-      }
-      console.log("account created")
-      }
+      // }
+      // else {
+      //   console.log("More than 100% allocated")
+      //   return
+      // }
+      // console.log("account created")
+      // }
     // }while(input < test)
   
   //         console.log('\n' + (new Array(30)).join(' ') +

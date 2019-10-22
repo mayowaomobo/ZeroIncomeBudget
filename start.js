@@ -1,8 +1,6 @@
 const commander = require('commander')
-const readline = require('readline');
-// const initialize = require('./initialize')
-const login = require('./src/login')
-const register = require('./src/register')
+const login = require('./src/login/login')
+const createAccount = require('./src/register/createLoginInfo')
 
 commander
     .option('-l --login')
@@ -13,5 +11,5 @@ commander
         login()
    }
    if (commander.register){
-        register();
+        createAccount();
    }

@@ -1,6 +1,6 @@
 {
   "id": 0,
-  "info": [
+  "userInfo": [
     {
       "login": {
         "username": "m",
@@ -8,10 +8,12 @@
       }
     },
     {
-      "initial": "4",
-      "testy": 2,
+      "initial": 45,
+      "factorCount": 4,
       "factors": [
-        "r"
+        "23",
+        "gf",
+        "e"
       ],
       "percentages": []
     }
