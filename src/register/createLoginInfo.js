@@ -1,7 +1,7 @@
 const readlineSync = require('readline-sync')
 const fs = require('fs')
 const chalk = require('chalk')
-const percentages=require('../data/percentages')
+const percentageData=require('../data/percentages')
 let passcode = 0;
 
 const getUsernameAndPassword = (callback) => {
@@ -55,7 +55,7 @@ const budgetingFacotrs = () => {
         percentages: []
     })
     saveData(parsedInfo)
-    percentages(parsedInfo)
+    percentageData(parsedInfo)
 }
 
 
