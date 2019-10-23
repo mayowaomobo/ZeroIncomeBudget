@@ -2,56 +2,26 @@ const fs = require('fs')
 const readlineSync = require('readline-sync')
 
 const percentages = (info) => { 
-
-
-console.log("this is percentages")
+percentage = 100
+// console.log("this is percentages")
   
-    // do{
-      // for (var goals of info.info[1].factors){
-      // console.log(test)
-      // console.log(goals)
-      // input = readlineSync.question("Percentage allocated to " + goals)
+// do{
+  for (let factors in info.userInfo[1].factors){
+    factorPercent = readlineSync.question("Percent of " + percentage + "% you want to allocate to " + info.userInfo[1].factors[factors] + "? ",{
       
-      // if (input < test){
-      //   test -= input;
-        
-      // }
-      // else {
-      //   console.log("More than 100% allocated")
-      //   return
-      // }
-      // console.log("account created")
-      // }
-    // }while(input < test)
-  
-  //         console.log('\n' + (new Array(30)).join(' ') +
-  //         'Percentage allocated to ' + goals+ '\n');
-  //       console.log('' + (new Array(30)).join(' ') +
-  //         '[Z] <- -> [X]  FIX: [SPACE]\n');
-
-
-  //   while (true) {
-
-  //   console.log('\x1B[1A\x1B[K|' +
-  //   (new Array(value + 1)).join('-') + 'O' +
-  //   (new Array(MAX - value + 1)).join('-') + '| ' + value);
-
-  //   key = readlineSync.keyIn('',
-  //   {hideEchoBack: true, mask: '', limit: 'zx '});
-
-  // if (key === 'z') { 
-  //   if (value > MIN) {
-  //      value--; } }
-
-  // else if (key === 'x') { if (value < MAX) { value++; } }
-
-  // else { break; }
-  // value = test - value;
+    })
+    if (factorPercent > percentage || factorPercent < 0){
+      console.log("invalid input");
+    } else {
+      percentage = percentage - factorPercent
+    }
+  }
+//   console.log("Hello")
+    
+//   }while(x == x)
 // }
-// console.log('\nA value the user requested: ' + value);
-// console.log(goals)
-
-
-}
-
+// for (let factors in info.userInfo[1].factors){
+  // console.log("The first factor is " + info.userInfo[1].factors[factors])
+      // }
+    }
 module.exports = percentages

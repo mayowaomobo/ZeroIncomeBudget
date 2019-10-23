@@ -31,7 +31,7 @@ const budgetingFacotrs = () => {
     const info = fs.readFileSync('./test.json');
     const parsedInfo = JSON.parse(info)
 
-    var initial = parseInt(readlineSync.question('How much are you planning to budget with? ',{
+    var initial = parseInt(readlineSync.question('How much are you planning to budget with? $',{
         limit: Number,
         limitMessage: (chalk.red.bold("Invalid input"))
     }))
@@ -39,7 +39,7 @@ const budgetingFacotrs = () => {
 
     var factors = new Array()
     factorCounter = 0;
-    console.log("\nBudgeting factors(press q to exit)")
+    console.log("\nBudgeting factors? (Groceries, Clothes, Misc e.t.c.) \n(press 'q' when done)")
     do{
         var restrictors = readlineSync.question('Factor ' +  (factorCounter+1) + ": ")
             factors[factorCounter] = restrictors
@@ -50,12 +50,12 @@ const budgetingFacotrs = () => {
     factors.pop();
     parsedInfo.userInfo.push({
         initial: initial,
-        factorCount: factorCounter,
+        factorCount: (factorCounter - 1),
         factors: factors,
         percentages: []
     })
     saveData(parsedInfo)
-    percentages(info)
+    percentages(parsedInfo)
 }
 
 
