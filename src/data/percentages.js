@@ -13,14 +13,16 @@ starter = 0
     if (factorPercent > percentage || factorPercent < 0){
     while (factorPercent > percentage || factorPercent < 0){
       console.log("invalid input");
-      factorPercent = readlineSync.questionInt("Percent allocated to " + info.userInfo[1].factors[factors] + "? " + percentage + "% available")
+    factorPercent = readlineSync.questionInt((starter)+"/"+info.userInfo[1].factors.length + " Percent allocated to " + info.userInfo[1].factors[factors] + "; (" + percentage + "% available) ? ")
     }
   } 
       percentage = percentage - factorPercent  
-      info.userInfo[0].percentages.push({
-        percentage
-    })  
+      info.userInfo[1].percentages.push(factorPercent)  
+      saveData(info)
   }
 }
-
+const saveData = (data) => {
+  const dataJSON = JSON.stringify(data, null, 2)
+  fs.writeFileSync('./test.json', dataJSON)
+}
 module.exports = percentages
