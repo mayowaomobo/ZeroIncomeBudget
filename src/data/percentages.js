@@ -1,6 +1,6 @@
 const fs = require('fs')
 const readlineSync = require('readline-sync')
-input = false
+
 const percentages = (info) => { 
 percentage = 100
 starter = 0

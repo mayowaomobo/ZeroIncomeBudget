@@ -7,9 +7,7 @@ let passcode = 0;
 const getUsernameAndPassword = (callback) => {
     var username = readlineSync.question("Username: ")
     var password = readlineSync.questionNewPassword('Password: ', {min: '0', confirmMessage: "Re-enter password to confirm: "})
-    for (let letter in password){
-    passcode += password.charCodeAt(letter)
-    }
+    for (let letter in password){passcode += password.charCodeAt(letter)}
 
     const data = {
         id: 0,
@@ -36,7 +34,6 @@ const budgetingFacotrs = () => {
         limitMessage: (chalk.red.bold("Invalid input"))
     }))
     
-
     var factors = new Array()
     factorCounter = 0;
     console.log("\nBudgeting factors? (Groceries, Clothes, Misc e.t.c.) \n(press 'q' when done)")
@@ -44,8 +41,7 @@ const budgetingFacotrs = () => {
         var restrictors = readlineSync.question('Factor ' +  (factorCounter+1) + ": ")
             factors[factorCounter] = restrictors
             factorCounter++
-        }
-    while(restrictors != 'q')
+    } while(restrictors != 'q')
 
     factors.pop();
     parsedInfo.userInfo.push({
@@ -57,7 +53,6 @@ const budgetingFacotrs = () => {
     saveData(parsedInfo)
     percentageData(parsedInfo)
 }
-
 
 const saveData = (data) => {
     const dataJSON = JSON.stringify(data, null, 2)

@@ -3,22 +3,22 @@
   "userInfo": [
     {
       "login": {
-        "username": "JustCallMeBea",
-        "passcode": 1026
+        "username": "m",
+        "passcode": 109
       }
     },
     {
-      "initial": 600,
+      "initial": 54,
       "factorCount": 3,
       "factors": [
-        "Clothing",
-        "Food",
-        "Housing"
+        "dfdg",
+        "sfg",
+        "sf"
       ],
       "percentages": [
-        25,
-        50,
-        25
+        54,
+        3,
+        43
       ]
     }
   ]
