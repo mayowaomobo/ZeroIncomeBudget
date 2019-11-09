@@ -1,24 +1,28 @@
 {
-  "id": 0,
-  "userInfo": [
+  "users": [
     {
-      "login": {
-        "username": "m",
-        "passcode": 109
-      }
-    },
-    {
-      "initial": 54,
-      "factorCount": 3,
-      "factors": [
-        "dfdg",
-        "sfg",
-        "sf"
-      ],
-      "percentages": [
-        54,
-        3,
-        43
+      "id": null,
+      "userInfo": [
+        {
+          "login": {
+            "username": "username",
+            "passcode": 109
+          },
+          "initial": 55,
+          "factorCount": 5,
+          "factors": [
+            "gdf",
+            "sdf",
+            "",
+            "dfg"
+          ],
+          "percentages": [
+            53,
+            3,
+            3,
+            41
+          ]
+        }
       ]
     }
   ]

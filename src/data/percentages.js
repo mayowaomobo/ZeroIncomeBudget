@@ -7,17 +7,17 @@ starter = 0
 // console.log("this is percentages")
   
 // do{
-  for (let factors in info.userInfo[1].factors){
+  for (let factors in info.users[0].userInfo[0].factors){
     starter++
-    factorPercent = readlineSync.questionInt((starter)+"/"+info.userInfo[1].factors.length + " Percent allocated to " + info.userInfo[1].factors[factors] + "; (" + percentage + "% available) ? ")
+    factorPercent = readlineSync.questionInt((starter)+"/"+info.users[0].userInfo[0].factors.length + " Percent allocated to " + info.users[0].userInfo[0].factors[factors] + "? (" + percentage + "% available) ? ")
     if (factorPercent > percentage || factorPercent < 0){
     while (factorPercent > percentage || factorPercent < 0){
       console.log("invalid input");
-    factorPercent = readlineSync.questionInt((starter)+"/"+info.userInfo[1].factors.length + " Percent allocated to " + info.userInfo[1].factors[factors] + "; (" + percentage + "% available) ? ")
+    factorPercent = readlineSync.questionInt((starter)+"/"+info.users[0].userInfo[0].factors.length + " Percent allocated to " + info.users[0].userInfo[0].factors[factors] + "? (" + percentage + "% available) ? ")
     }
   } 
       percentage = percentage - factorPercent  
-      info.userInfo[1].percentages.push(factorPercent)  
+      info.users[0].userInfo[0].percentages.push(factorPercent)  
       saveData(info)
   }
 }

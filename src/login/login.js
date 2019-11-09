@@ -17,8 +17,7 @@ const login = () => {
     }
     if (passcode == parsedInfo.info[0].login.passcode && userName ==  parsedInfo.info[0].login.username){
         console.log("welcome in")
-    }
-    else{
+    }else{
         console.log("incorrect username or password");
     }
 
