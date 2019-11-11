@@ -4,8 +4,9 @@
   "description": "",
   "main": "test.js",
   "dependencies": {
-    "commander": "^3.0.1",
     "chalk": "^2.4.2",
+    "commander": "^3.0.1",
+    "express": "^4.17.1",
     "log4js": "^5.1.0",
     "readline-sync": "^1.4.10"
   },

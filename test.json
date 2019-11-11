@@ -1,11 +1,29 @@
 {
-    "accounts": [
+  "users": [
+    {
+      "id": null,
+      "userInfo": [
         {
-        "Usermane": "admin",
-        "Password": "password",
-        "Balance": 2000
+          "login": {
+            "username": "username",
+            "passcode": 109
+          },
+          "initial": 55,
+          "factorCount": 5,
+          "factors": [
+            "gdf",
+            "sdf",
+            "",
+            "dfg"
+          ],
+          "percentages": [
+            53,
+            3,
+            3,
+            41
+          ]
         }
-    ]
-
-    
+      ]
+    }
+  ]
 }

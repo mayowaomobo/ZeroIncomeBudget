@@ -1,22 +1,15 @@
 const commander = require('commander')
-const readline = require('readline');
-// const initialize = require('./initialize')
-const login = require('./src/login')
+const login = require('./src/login/login')
+const createAccount = require('./src/register/createLoginInfo')
 
 commander
-    .option('-l --login');
-
-
-   commander.parse(process.argv);
+    .option('-l --login')
+    .option('-r --register');
+          commander.parse(process.argv);
 
    if (commander.login){
         login()
    }
-       
-    
-
-
-//initialize
-//add value
-//expense
-//balance
+   if (commander.register){
+        createAccount();
+   }
