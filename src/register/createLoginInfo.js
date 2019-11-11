@@ -31,17 +31,20 @@ const getUsernameAndPassword = (callback) => {
 
     existingUserCheck(username)
 
-    data.users[0].userInfo[0].login.username = username
-    data.users[0].userInfo[0].login.passcode = passcode
-    data.users[0].id = userData.users.length + 1;
+    // [ { "title":" 2.0 Wireless " }, [{ "title":" Marshall Major II " }] ]
 
+    data.userInfo[0].login.username = username
+    data.userInfo[0].login.passcode = passcode
+    data.id = userData.users.length + 1;
+
+    // data.user[0].push
+    userData.users.push (data)
     saveData(data)
     callback()
 }
 
 const budgetingFacotrs = () => {
         const data = loadTemplate();
-        userData = loadUsers();
 
     var initial = parseInt(readlineSync.question('How much are you planning to budget with? $',{
         limit: Number,
@@ -52,28 +55,29 @@ const budgetingFacotrs = () => {
     console.log("\nBudgeting factors? (Groceries, Clothes, Misc e.t.c.) \n(press 'q' when done)")
     do{
         var restrictors = readlineSync.question('Factor ' +  (factorCounter+1) + ": ")
-        data.users[0].userInfo[0].factors[factorCounter] = restrictors
+        data.userInfo[0].factors[factorCounter] = restrictors
             factorCounter++
     } while(restrictors != 'q')
 
-    data.users[0].userInfo[0].factors.pop();
-    data.users[0].userInfo[0].initial = initial
-    data.users[0].userInfo[0].factorCount = factorCounter
+    data.userInfo[0].factors.pop();
+    data.userInfo[0].initial = initial
+    data.userInfo[0].factorCount = factorCounter
 
-    saveData(data)
+    userData = loadUsers();
+
+    userData.users[0].push (data)
+    // saveData(data)
     percentageData(data)
+}
+
+
+const start = () => {
+getUsernameAndPassword(budgetingFacotrs)
 }
 
 const saveData = (data) => {
     const dataJSON = JSON.stringify(data, null, 2)
     fs.writeFileSync('./test.json', dataJSON)
-    return dataJSON;
-    // var uname = data.userInfo[0].login.username;
-    // console.log(uname)
-}
-
-const start = () => {
-getUsernameAndPassword(budgetingFacotrs)
 }
 
 const loadTemplate = () => {

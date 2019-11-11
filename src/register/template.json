@@ -1,5 +1,3 @@
-{
-    "users": [
       {
         "id": null,
         "userInfo": [
@@ -11,9 +9,8 @@
             "initial": null,
             "factorCount": null,
             "factors": [],
-            "percentages": []
+            "percentages": [],
+            "amount": []
           }
         ]
       }
-    ]
-  }
