@@ -1,0 +1,30 @@
+{
+    "users": [
+      {
+        "id": null,
+        "userInfo": [
+          {
+            "login": {
+              "username": "username",
+              "passcode": 109
+            },
+            "initial": 555,
+            "factorCount": 5,
+            "factors": [
+              "rice",
+              "food",
+              "not rice",
+              "idk"
+            ],
+            "percentages": [
+              100,
+              0,
+              0,
+              0
+            ],
+            "amount": []
+          }
+        ]
+      }
+    ]
+  }

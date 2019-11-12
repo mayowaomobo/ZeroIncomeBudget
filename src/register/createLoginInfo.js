@@ -31,20 +31,36 @@ const getUsernameAndPassword = (callback) => {
 
     existingUserCheck(username)
 
-    // [ { "title":" 2.0 Wireless " }, [{ "title":" Marshall Major II " }] ]
+    toPush = {
+            "id": userData.users.length,
+            "userInfo": [
+              {
+                "login": {
+                  "username": username,
+                  "passcode": passcode
+                },
+                "initial": null,
+                "factorCount": null,
+                "factors": [],
+                "percentages": [],
+                "amount": []
+              }
+            ]
+    }
+    
+    // data.userInfo[0].login.username = username
+    // data.userInfo[0].login.passcode = passcode
+    // data.id = userData.users.length + 1;
 
-    data.userInfo[0].login.username = username
-    data.userInfo[0].login.passcode = passcode
-    data.id = userData.users.length + 1;
-
-    // data.user[0].push
-    userData.users.push (data)
-    saveData(data)
-    callback()
+    // userData.users.push(data)
+    // userData.users[1]=data
+    // Object.assign(data.userInfo[0].login.username, userData.users[0])
+    // saveData(userData)
+    callback(toPush)
 }
 
-const budgetingFacotrs = () => {
-        const data = loadTemplate();
+const budgetingFacotrs = (toPush) => {
+    // const data = loadTemplate();
 
     var initial = parseInt(readlineSync.question('How much are you planning to budget with? $',{
         limit: Number,
@@ -55,19 +71,19 @@ const budgetingFacotrs = () => {
     console.log("\nBudgeting factors? (Groceries, Clothes, Misc e.t.c.) \n(press 'q' when done)")
     do{
         var restrictors = readlineSync.question('Factor ' +  (factorCounter+1) + ": ")
-        data.userInfo[0].factors[factorCounter] = restrictors
+        toPush.userInfo[0].factors[factorCounter] = restrictors
             factorCounter++
     } while(restrictors != 'q')
 
-    data.userInfo[0].factors.pop();
-    data.userInfo[0].initial = initial
-    data.userInfo[0].factorCount = factorCounter
+    toPush.userInfo[0].factors.pop();
+    toPush.userInfo[0].initial = initial
+    toPush.userInfo[0].factorCount = factorCounter - 1
 
-    userData = loadUsers();
+    // userData = loadUsers();
 
-    userData.users[0].push (data)
+    // userData.users[0].push (data)
     // saveData(data)
-    percentageData(data)
+    percentageData(toPush)
 }
 
 
