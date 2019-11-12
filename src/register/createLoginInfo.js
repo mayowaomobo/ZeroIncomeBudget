@@ -7,7 +7,7 @@ const percentageData=require('../data/percentages')
 let passcode = 0;
 
 const existingUserCheck = (username) => {
-    rawdata = fs.readFileSync(path.join(__dirname,'../../test.json'))
+    rawdata = fs.readFileSync(path.join(__dirname,'../../users.json'))
     data = JSON.parse(rawdata);
 
     for (var name = 0; name < data.users.length; name++){
@@ -19,8 +19,6 @@ const existingUserCheck = (username) => {
 }
 
 const getUsernameAndPassword = (callback) => {
-
-    const data = loadTemplate();
     userData = loadUsers();
 
     var username = readlineSync.question("Username: ")
@@ -47,20 +45,11 @@ const getUsernameAndPassword = (callback) => {
               }
             ]
     }
-    
-    // data.userInfo[0].login.username = username
-    // data.userInfo[0].login.passcode = passcode
-    // data.id = userData.users.length + 1;
-
-    // userData.users.push(data)
-    // userData.users[1]=data
-    // Object.assign(data.userInfo[0].login.username, userData.users[0])
-    // saveData(userData)
+  
     callback(toPush)
 }
 
 const budgetingFacotrs = (toPush) => {
-    // const data = loadTemplate();
 
     var initial = parseInt(readlineSync.question('How much are you planning to budget with? $',{
         limit: Number,
@@ -79,10 +68,6 @@ const budgetingFacotrs = (toPush) => {
     toPush.userInfo[0].initial = initial
     toPush.userInfo[0].factorCount = factorCounter - 1
 
-    // userData = loadUsers();
-
-    // userData.users[0].push (data)
-    // saveData(data)
     percentageData(toPush)
 }
 
@@ -91,24 +76,10 @@ const start = () => {
 getUsernameAndPassword(budgetingFacotrs)
 }
 
-const saveData = (data) => {
-    const dataJSON = JSON.stringify(data, null, 2)
-    fs.writeFileSync('./test.json', dataJSON)
-}
-
-const loadTemplate = () => {
-    try {
-        let rawdata = fs.readFileSync(path.join(__dirname,'template.json'))
-        return data = JSON.parse(rawdata);
-    }
-    catch {
-        console.log("There was an error")
-    }
-}
 
 const loadUsers = () => {
     try {
-        rawUserData = fs.readFileSync(path.join(__dirname,'../../test.json'))
+        rawUserData = fs.readFileSync(path.join(__dirname,'../../users.json'))
         return userData = JSON.parse(rawUserData);
     }
     catch {
