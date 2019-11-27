@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "userInfo": [
+        {
+          "login": {
+            "username": "test",
+            "passcode": 100
+          },
+          "initial": 555,
+          "factorCount": 5,
+          "factors": [
+            "test",
+            "test",
+            "test",
+            "test"
+          ],
+          "percentages": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "amount": []
+        }
+      ]
+    }    
+  ]
+}

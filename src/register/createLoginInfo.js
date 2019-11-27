@@ -7,7 +7,7 @@ const percentageData=require('../data/percentages')
 let passcode = 0;
 
 const existingUserCheck = (username) => {
-    rawdata = fs.readFileSync(path.join(__dirname,'../../test.json'))
+    rawdata = fs.readFileSync(path.join(__dirname,'../../users.json'))
     data = JSON.parse(rawdata);
 
     for (var name = 0; name < data.users.length; name++){
@@ -19,8 +19,6 @@ const existingUserCheck = (username) => {
 }
 
 const getUsernameAndPassword = (callback) => {
-
-    const data = loadTemplate();
     userData = loadUsers();
 
     var username = readlineSync.question("Username: ")
@@ -31,17 +29,27 @@ const getUsernameAndPassword = (callback) => {
 
     existingUserCheck(username)
 
-    data.users[0].userInfo[0].login.username = username
-    data.users[0].userInfo[0].login.passcode = passcode
-    data.users[0].id = userData.users.length + 1;
-
-    saveData(data)
-    callback()
+    toPush = {
+            "id": userData.users.length,
+            "userInfo": [
+              {
+                "login": {
+                  "username": username,
+                  "passcode": passcode
+                },
+                "initial": null,
+                "factorCount": null,
+                "factors": [],
+                "percentages": [],
+                "amount": []
+              }
+            ]
+    }
+  
+    callback(toPush)
 }
 
-const budgetingFacotrs = () => {
-        const data = loadTemplate();
-        userData = loadUsers();
+const budgetingFacotrs = (toPush) => {
 
     var initial = parseInt(readlineSync.question('How much are you planning to budget with? $',{
         limit: Number,
@@ -52,43 +60,26 @@ const budgetingFacotrs = () => {
     console.log("\nBudgeting factors? (Groceries, Clothes, Misc e.t.c.) \n(press 'q' when done)")
     do{
         var restrictors = readlineSync.question('Factor ' +  (factorCounter+1) + ": ")
-        data.users[0].userInfo[0].factors[factorCounter] = restrictors
+        toPush.userInfo[0].factors[factorCounter] = restrictors
             factorCounter++
     } while(restrictors != 'q')
 
-    data.users[0].userInfo[0].factors.pop();
-    data.users[0].userInfo[0].initial = initial
-    data.users[0].userInfo[0].factorCount = factorCounter
+    toPush.userInfo[0].factors.pop();
+    toPush.userInfo[0].initial = initial
+    toPush.userInfo[0].factorCount = factorCounter - 1
 
-    saveData(data)
-    percentageData(data)
+    percentageData(toPush)
 }
 
-const saveData = (data) => {
-    const dataJSON = JSON.stringify(data, null, 2)
-    fs.writeFileSync('./test.json', dataJSON)
-    return dataJSON;
-    // var uname = data.userInfo[0].login.username;
-    // console.log(uname)
-}
 
 const start = () => {
 getUsernameAndPassword(budgetingFacotrs)
 }
 
-const loadTemplate = () => {
-    try {
-        let rawdata = fs.readFileSync(path.join(__dirname,'template.json'))
-        return data = JSON.parse(rawdata);
-    }
-    catch {
-        console.log("There was an error")
-    }
-}
 
 const loadUsers = () => {
     try {
-        rawUserData = fs.readFileSync(path.join(__dirname,'../../test.json'))
+        rawUserData = fs.readFileSync(path.join(__dirname,'../../users.json'))
         return userData = JSON.parse(rawUserData);
     }
     catch {
