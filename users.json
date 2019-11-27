@@ -25,37 +25,6 @@
           "amount": []
         }
       ]
-    },
-    {
-      "id": 1,
-      "userInfo": [
-        {
-          "login": {
-            "username": "mayo",
-            "passcode": 438
-          },
-          "initial": 5000,
-          "factorCount": 4,
-          "factors": [
-            "headphonwa",
-            "lotion",
-            "fan",
-            "laptop"
-          ],
-          "percentages": [
-            22,
-            34,
-            2,
-            42
-          ],
-          "amount": [
-            1100,
-            1700.0000000000002,
-            100,
-            2100
-          ]
-        }
-      ]
-    }
+    }    
   ]
 }
