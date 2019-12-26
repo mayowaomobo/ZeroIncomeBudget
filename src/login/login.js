@@ -17,7 +17,7 @@ const login = () => {
     var password = readlineSync.question('Password: ');
 
     
-        passcode  = crypto.createHash('md5').update(password).digest('hex');
+        passcode  = crypto.createHash('sha256').update(name).digest('hex');
     
     // if (passcode == parsedInfo.info[0].login.passcode && userName ==  parsedInfo.info[0].login.username){
     //     console.log("welcome in")

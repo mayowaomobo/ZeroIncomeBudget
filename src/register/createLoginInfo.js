@@ -27,7 +27,7 @@ const getUsernameAndPassword = (callback) => {
     var username = readlineSync.question("Username: ")
     var password = readlineSync.questionNewPassword('Password: ', {min: '0', confirmMessage: "Re-enter password to confirm: "})
 
-        passcode = crypto.createHash('md5').update(password).digest('hex');
+        passcode = crypto.createHash('sha256').update(name).digest('hex');
     
 
     existingUserCheck(username)

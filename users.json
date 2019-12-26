@@ -25,34 +25,6 @@
           "amount": []
         }
       ]
-    },
-    {
-      "id": 1,
-      "userInfo": [
-        {
-          "login": {
-            "username": "mayowa",
-            "passcode": "3c3a4681a1077d6d9010438c9cd0b334"
-          },
-          "initial": 4500,
-          "factorCount": 3,
-          "factors": [
-            "christmas",
-            "new years",
-            "idk"
-          ],
-          "percentages": [
-            33,
-            33,
-            34
-          ],
-          "amount": [
-            1485,
-            1485,
-            1530
-          ]
-        }
-      ]
     }
   ]
 }
