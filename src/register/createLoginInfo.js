@@ -2,6 +2,9 @@ const readlineSync = require('readline-sync')
 const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
+var crypto = require('crypto');
+
+
 
 const percentageData=require('../data/percentages')
 let passcode = 0;
@@ -23,9 +26,9 @@ const getUsernameAndPassword = (callback) => {
 
     var username = readlineSync.question("Username: ")
     var password = readlineSync.questionNewPassword('Password: ', {min: '0', confirmMessage: "Re-enter password to confirm: "})
-    for (let letter in password){
-        passcode += password.charCodeAt(letter)
-    }
+
+        passcode = crypto.createHash('md5').update(password).digest('hex');
+    
 
     existingUserCheck(username)
 
